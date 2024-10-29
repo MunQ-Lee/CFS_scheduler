@@ -19,11 +19,15 @@ typedef struct {
     int arrival_time;
     int burst_time;
     int remaining_time;
+    int nice;
     int weight;               // 프로세스 가중치
     double virtual_runtime;   // 가상 실행 시간
     int start_time;
     int completed;
 } Job;
+
+extern int nice[40];
+extern int weight[40];
 
 int round_robin_scheduler(Job jobs[], int n, int current_time, int *time_slice);
 int fair_scheduler(Job jobs[], int n, int current_time, int *time_slice);
